@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Form: View</title>
+</head>
+<body>
+<h1>My Form</h1>
+
+<a href="${request.route_url('mypage_add')}">Add Record</a><br>
+<a href="/records">View all Record</a>
+</body>
+</html>

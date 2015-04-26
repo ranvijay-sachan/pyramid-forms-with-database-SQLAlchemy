@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Page: View</title>
+    <style>
+table, td{
+    border: 1px solid black;
+}
+</style>
+<<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script type="text/javascript">
+            function delete_record(id){
+                            alert(id)
+                            $.ajax({
+                                url : '/delete_record_ajax',
+                                type : 'POST',
+                                data : {'id' : id },
+                                success: function(data){
+                                    alert(id)
+                                    alert("Success. Got the message:\n "+ data)
+                                }
+                            });
+                        }
+ </script>
+</head>
+<body>
+<h1><a href="${request.route_url('my_view')}">Home</a></h1><br>
+<table id="my-table">
+  <tr tal:repeat="record records" id="${record.id}">
+        <td>${record.id}</td>
+        <td>${record.name}</td>
+        <td>${record.email}</td>
+        <!--?<td><a href="${request.route_url('delete_record', id=record.id)}"> Delete</a></td>-->
+        <td><a href onClick="delete_record('${record.id}');" > delete </a> </td>
+  </tr>
+</table>
+</body>
+</html>

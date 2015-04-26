@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Form: Add</title>
+</head>
+<body>
+<h1>My Page</h1>
+
+<p>${structure: form}</p>
+<script type="text/javascript">
+    deform.load()
+</script>
+</body>
+</html>
